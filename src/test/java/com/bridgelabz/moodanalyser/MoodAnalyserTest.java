@@ -13,7 +13,7 @@ public class MoodAnalyserTest {
 	/**
 	 *@method givenSadMessageReturnSad is to test weather user in sad mood
 	 *@Test user is in sad mood
-	 *@return
+	 *@return sad
 	 */
 	@Test
     public void givenSadMessageReturnSad() {
@@ -32,5 +32,18 @@ public class MoodAnalyserTest {
 		MoodAnalyser MoodAnalyserTest = new MoodAnalyser();
 		String mood = MoodAnalyserTest.analyseMood("Happy");
 		Assert.assertEquals("Happy", mood);
+	}
+	
+	/**
+	 * @method givenNullMessageShouldReturnHappyMessage is to test if user if users given any others or null mood.
+	 *@Test if user Provides Invalid Mood, like Null
+	 *@return Happy 
+	 */
+	
+	@Test
+	public void givenNullMessageShowReturnHappyMessage() {
+		MoodAnalyser moodAnalyserTest = new MoodAnalyser();
+		String mood = moodAnalyserTest.exceptionAnalyseMood();
+		Assert.assertEquals("Happy",mood);
 	}
 }
